@@ -1,0 +1,5 @@
+README.md  mode=0664  uid=1000  gid=1000
+if-pull-needed  mode=0775  uid=1000  gid=1000
+pull  mode=0775  uid=1000  gid=1000
+push  mode=0775  uid=1000  gid=1000
+setgitperms.pl  mode=0775  uid=1000  gid=1000

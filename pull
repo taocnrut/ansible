@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ -f /usr/libexec/git-core/git-sh-setup ]; then
+        SUBDIRECTORY_OK=1 . /usr/libexec/git-core/git-sh-setup
+fi
+
+if [ -f /usr/git-core/git-sh-setup ]; then
+        SUBDIRECTORY_OK=1 . /usr/git-core/git-sh-setup
+fi
+
+git pull
+perl setgitperms.pl -w
+
