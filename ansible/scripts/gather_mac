@@ -1,0 +1,4 @@
+mkdir -p rez
+ansible all -m setup -t rez/ > /dev/null
+jq '.ansible_facts.ansible_eth0.macaddress' rez/*
+rm -rf rez

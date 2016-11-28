@@ -6,6 +6,7 @@ ansible  mode=0775  uid=1000  gid=1000
 ansible/ad-hoc/00-add-keys  mode=0775  uid=1000  gid=1000
 ansible/ad-hoc/01-ping  mode=0775  uid=1000  gid=1000
 ansible/ad-hoc/02-console  mode=0775  uid=1000  gid=1000
+ansible/ad-hoc/03-setup  mode=0775  uid=1000  gid=1000
 ansible/ansible.cfg  mode=0644  uid=1000  gid=1000
 ansible/hosts  mode=0664  uid=1000  gid=1000
 ansible/playbooks  mode=0775  uid=1000  gid=1000
@@ -14,6 +15,7 @@ ansible/playbooks/02-shell-human.yml  mode=0664  uid=1000  gid=1000
 ansible/playbooks/05-run.yml  mode=0664  uid=1000  gid=1000
 ansible/scripts  mode=0775  uid=1000  gid=1000
 ansible/scripts/cleanup  mode=0775  uid=1000  gid=1000
+ansible/scripts/gather_mac  mode=0775  uid=1000  gid=1000
 ansible/scripts/get_ansible-examples  mode=0775  uid=1000  gid=1000
 ansible/scripts/get_human_log  mode=0775  uid=1000  gid=1000
 ansible/scripts/runonce  mode=0775  uid=1000  gid=1000

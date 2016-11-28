@@ -1,0 +1,1 @@
+ansible $1 -o -m setup -a 'filter=hostname'
