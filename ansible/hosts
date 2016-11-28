@@ -1,0 +1,5 @@
+[local]
+localhost
+
+[monitori]
+mon-[1:3]

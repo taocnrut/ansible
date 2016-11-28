@@ -1,0 +1,1 @@
+ansible -k -m authorized_key -a "user={{ ansible_ssh_user }} key={{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}" $1

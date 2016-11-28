@@ -1,0 +1,7 @@
+---
+- hosts: local
+  tasks:
+   - shell: cat /etc/fstab
+     register: result
+
+   - debug: msg="{{ result.stdout }}"

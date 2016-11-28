@@ -1,0 +1,1 @@
+wget https://raw.githubusercontent.com/n0ts/ansible-human_log/master/human_log.py -O callback/human-log.py -o /dev/null
