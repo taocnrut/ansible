@@ -1,1 +1,1 @@
-ansible $1 -o -m setup -a 'filter=hostname'
+ansible $1 -m setup -a 'filter=ansible_all_ipv4_addresses'

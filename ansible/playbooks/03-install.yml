@@ -1,0 +1,13 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Instaliraj razne pakete
+  hosts: all
+  tasks:
+    - name: Install
+      yum: name={{ item }} state=present
+      with_items:
+        - vim-enhanced
+        - strace
+  
+ 
+

@@ -1,0 +1,9 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: all
+  tasks: 
+   - lineinfile: dest=/etc/php.ini regexp=^memory_limit= line="memory_limit = 128M"
+
+  
+ 
+

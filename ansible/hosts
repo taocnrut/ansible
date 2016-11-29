@@ -3,3 +3,8 @@ localhost
 
 [monitori]
 mon-[1:3]
+
+[mday]
+mns-mday-1
+mns-mday-2
+

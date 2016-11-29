@@ -1,0 +1,11 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Transfer and execute a script.
+  hosts: all
+  tasks:
+     - name: Transfer the script
+       copy: src=../scripts/run/script dest=/root/run.sh mode=0700
+
+     - name: Execute the script
+       command: sh /root/run.sh --run
+

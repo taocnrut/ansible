@@ -7,9 +7,13 @@ exec 2>&1
 
 echo
 echo "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv $(hostname -s)"
-echo Hello
-rm -f /root/runonce.sh /tmp/runonce.sh
+
+echo -n "Shellshock: "
+env x='() { :;}; echo vulnerable; exit;' bash -c 'echo not vulnerable' 2>/dev/null
+
+echo -n "DirtyCow: "
+wget https://access.redhat.com/sites/default/files/rh-cve-2016-5195_5.sh -O /tmp/rh-cve-2016-5195_5.sh -o /dev/null
+bash /tmp/rh-cve-2016-5195_5.sh
 
 echo "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ $(hostname -s)"
-
-
+rm -f /root/runonce.sh /tmp/runonce.sh
