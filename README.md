@@ -1,1 +1,52 @@
-# ansible
+# Ansible intro + tips and tricks
+## What does Ansible do
+## Installation - RTFM
+## Basic usage
+- Inventory
+- Auth
+- Ping
+- Config
+	- Ansible will use the configuration options found on the first file that it finds from the following list:
+		- ANSIBLE_CONFIG: an environment variable pointing to a config file
+		- ansible.cfg: in the current directory
+		- .ansible.cfg: in the home directory
+		- /etc/ansible/ansible.cfg
+	- Interesting configs
+		- inventory
+		- remote_user
+		- ask_sudo_pass
+		- log_path
+- Ad-hoc commands
+	- ping
+	- setup
+	- gather_mac example script
+	- authorized_key
+	- ansible-console
+- Playbooks
+	- YAML syntax
+	- shell
+	- human_log callback
+	- run.sh example script
+- Commonly used modules
+	- apt and yum
+	- service
+	- copy
+	- template
+	- shell
+- Variables
+	- where to define
+		- inventory
+		- playbook
+		- roles
+	- how to use (Jinja2)
+	- gathered facts
+	- hostvars
+	- groups
+- Roles
+	- tasks
+	- files
+	- handlers
+	- templates
+	- default
+- Example playbooks and roles
+	- wordpress-nginx_rhel7 aka Hello World

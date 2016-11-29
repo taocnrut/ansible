@@ -18,9 +18,9 @@ ansible/scripts/cleanup  mode=0775  uid=1000  gid=1000
 ansible/scripts/gather_mac  mode=0775  uid=1000  gid=1000
 ansible/scripts/get_ansible-examples  mode=0775  uid=1000  gid=1000
 ansible/scripts/get_human_log  mode=0775  uid=1000  gid=1000
-ansible/scripts/runonce  mode=0775  uid=1000  gid=1000
-ansible/scripts/runonce/run.sh  mode=0775  uid=1000  gid=1000
-ansible/scripts/runonce/script  mode=0664  uid=1000  gid=1000
+ansible/scripts/run  mode=0775  uid=1000  gid=1000
+ansible/scripts/run/run.sh  mode=0775  uid=1000  gid=1000
+ansible/scripts/run/script  mode=0664  uid=1000  gid=1000
 if-pull-needed  mode=0775  uid=1000  gid=1000
 pull  mode=0775  uid=1000  gid=1000
 push  mode=0775  uid=1000  gid=1000
