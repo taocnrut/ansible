@@ -9,8 +9,8 @@
      with_dict: "{{ users }}"
    - authorized_key: user={{ item.key }} key={{ item.value.key }}
      with_dict: "{{ users }}"
-   - user: name={{ item.key }} state=absent remove=yes
-     with_dict: "{{ users }}"
+#   - user: name={{ item.key }} state=absent remove=yes
+#     with_dict: "{{ users }}"
 
 
   
