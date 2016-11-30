@@ -10,9 +10,10 @@ ansible/ad-hoc/03-setup  mode=0775  uid=1000  gid=1000
 ansible/ansible.cfg  mode=0644  uid=1000  gid=1000
 ansible/hosts  mode=0664  uid=1000  gid=1000
 ansible/playbooks  mode=0775  uid=1000  gid=1000
-ansible/playbooks/01-hello.yml  mode=0755  uid=0  gid=0
-ansible/playbooks/03-install.yml  mode=0755  uid=0  gid=0
-ansible/playbooks/04-lineinfile.yml  mode=0755  uid=0  gid=0
+ansible/playbooks/01-hello.yml  mode=0755  uid=1000  gid=1000
+ansible/playbooks/03-install.yml  mode=0755  uid=1000  gid=1000
+ansible/playbooks/04-lineinfile.yml  mode=0755  uid=1000  gid=1000
+ansible/playbooks/05-users.yml  mode=0755  uid=1000  gid=1000
 ansible/playbooks/07-shell.yml  mode=0775  uid=1000  gid=1000
 ansible/playbooks/08-shell-human.yml  mode=0775  uid=1000  gid=1000
 ansible/playbooks/09-run.yml  mode=0775  uid=1000  gid=1000
@@ -24,6 +25,8 @@ ansible/scripts/get_human_log  mode=0775  uid=1000  gid=1000
 ansible/scripts/run  mode=0775  uid=1000  gid=1000
 ansible/scripts/run/run.sh  mode=0775  uid=1000  gid=1000
 ansible/scripts/run/script  mode=0664  uid=1000  gid=1000
+ansible/vars  mode=0775  uid=1000  gid=1000
+ansible/vars/users.yml  mode=0664  uid=1000  gid=1000
 if-pull-needed  mode=0775  uid=1000  gid=1000
 pull  mode=0775  uid=1000  gid=1000
 push  mode=0775  uid=1000  gid=1000
