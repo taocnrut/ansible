@@ -23,8 +23,8 @@ ansible/playbooks/03-lineinfile.yml  mode=0755  uid=1000  gid=1000
 ansible/playbooks/04-diff.yml  mode=0755  uid=1000  gid=1000
 ansible/playbooks/05-users.yml  mode=0755  uid=1000  gid=1000
 ansible/playbooks/06-email.yml  mode=0755  uid=1000  gid=1000
-ansible/playbooks/07-shell.yml  mode=0775  uid=1000  gid=1000
-ansible/playbooks/08-shell-human.yml  mode=0775  uid=1000  gid=1000
+ansible/playbooks/07-stdout.yml  mode=0775  uid=1000  gid=1000
+ansible/playbooks/08-stdout-human.yml  mode=0775  uid=1000  gid=1000
 ansible/playbooks/09-script.yml  mode=0775  uid=1000  gid=1000
 ansible/playbooks/10-stateful-nginx-config.yml  mode=0775  uid=1000  gid=1000
 ansible/scripts  mode=0775  uid=1000  gid=1000
