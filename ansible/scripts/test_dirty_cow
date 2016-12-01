@@ -1,0 +1,7 @@
+#!/bin/bash
+echo -n "DirtyCow: "
+wget https://access.redhat.com/sites/default/files/rh-cve-2016-5195_5.sh -O /tmp/rh-cve-2016-5195_5.sh -o /dev/null
+bash /tmp/rh-cve-2016-5195_5.sh
+rez=$?
+rm -f /tmp/rh-cve-2016-5195_5.sh
+exit $rez

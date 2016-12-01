@@ -6,3 +6,4 @@
      register: result
 
    - debug: msg="{{ result.stdout }}"
+

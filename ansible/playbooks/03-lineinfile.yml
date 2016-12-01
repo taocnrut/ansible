@@ -1,16 +1,21 @@
 #!/usr/bin/env ansible-playbook
 ---
 - hosts: all
+  gather_facts: False
+
   vars_prompt:
    - name: "old"
      prompt: "What line do you search for?"
      private: no
+
    - name: "new"
      prompt: "How do you want it to be?"
      private: no
+
    - name: "file"
      prompt: "What is the name of the file?"
      private: no
+
   tasks: 
    - lineinfile: dest={{ file }} regexp={{ old }} line={{ new }}
 

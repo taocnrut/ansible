@@ -1,0 +1,22 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Add bunch of users
+  hosts: local
+  gather_facts: False
+  vars_files:
+   - ../vars/users.yml
+
+  tasks:
+   - local_action: template src=../vars/mail.j2 dest=tmp/{{ item.key }}.mail force=yes 
+     with_dict: "{{ users }}"
+     run_once: true
+
+   - local_action: 
+        mail 
+        to={{ item.value.email }} 
+        subject="Hello from {{ inventory_hostname }}"
+        body={{ lookup("file","tmp/{{ item.key}}.mail" )}}
+     with_dict: "{{ users }}"
+     run_once: true
+  
+ 

@@ -2,8 +2,11 @@
 users:
   pera: 
     realname: Pera Peric
+    email: test1@example.com
     key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOwwQjiLCPGndMH3eFm2hQT0PXWhSk3dxY5vIGoaPK+EHYnbROrq8xKAliWAm6uCOk71TfaWloi2Y/OvAa0y2N+4PdhMqOdz4z8PoUkenPMd5jVzaZS8UekDHYHqIsN/Rwoz+Ht+nycxuwpBUZPMjGgJrQdF0VWmVQz2m3NRjsBeQ5wwiF+GVQXPZWZBtEudfuvkvzhKccLYNjvsQbF/h2+7BmTFM//d1PFgEr48FP2kK3tLYppb536XkSZudcDvlIuDpqPJUbxs/f0rIWfoAN9pobPk10ngHl+1MGxjEPYWnDqt0WItu+1nCz80vZ5aNMx6y9c3lfD/p9cU1ib/3v turncoat@localhost.localdomain
+
   mika: 
     realname: Mika Mikic
+    email: test2@example.com
     key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOwwQjiLCPGndMH3eFm2hQT0PXWhSk3dxY5vIGoaPK+EHYnbROrq8xKAliWAm6uCOk71TfaWloi2Y/OvAa0y2N+4PdhMqOdz4z8PoUkenPMd5jVzaZS8UekDHYHqIsN/Rwoz+Ht+nycxuwpBUZPMjGgJrQdF0VWmVQz2m3NRjsBeQ5wwiF+GVQXPZWZBtEudfuvkvzhKccLYNjvsQbF/h2+7BmTFM//d1PFgEr48FP2kK3tLYppb536XkSZudcDvlIuDpqPJUbxs/f0rIWfoAN9pobPk10ngHl+1MGxjEPYWnDqt0WItu+1nCz80vZ5aNMx6y9c3lfD/p9cU1ib/3v turncoat@localhost.localdomain
 

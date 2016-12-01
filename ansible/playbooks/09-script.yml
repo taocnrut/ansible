@@ -1,0 +1,11 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Transfer and execute a script.
+  hosts: all
+  gather_facts: False
+
+  tasks:
+     - name: Transfer the script
+       script: ../scripts/test_dirty_cow 
+
+
