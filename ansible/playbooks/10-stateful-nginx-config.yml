@@ -44,15 +44,12 @@
     
     - name: Create initial local config
       local_action: file state=directory path=../files/conf/{{ inventory_hostname }}/etc/
-      run_once: true
     
     - name: Unpack nginx example config
       local_action: unarchive creates=../files/conf/{{ inventory_hostname }}/etc/nginx src=../files/nginx.tar.gz dest={{ playbook_dir }}/../files/conf/{{ inventory_hostname }}/etc/
-      run_once: true
     
     - name: Template nginx default.conf
       local_action: template src=../files/nginx-default.conf.j2 dest=../files/conf/{{ inventory_hostname }}/etc/nginx/conf.d/default.conf force=no 
-      run_once: true
   
     - name: Check if nginx configuration has changed
       synchronize:
