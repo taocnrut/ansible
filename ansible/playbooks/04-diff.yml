@@ -9,15 +9,17 @@
      private: no
 
   tasks: 
-   - fetch: src={{ file }} dest=tmp/
+   - local_action: file path=../files/tmp state=directory
 
-   - local_action: shell gvimdiff tmp/*/{{ file }}
+   - fetch: src={{ file }} dest=../files/tmp/
+
+   - local_action: shell gvimdiff ../files/tmp/*/{{ file }}
      run_once: true
 
    - pause: prompt="Press enter when finished editing differences..."
 
-   - copy: src=tmp/{{inventory_hostname}}{{ file }} dest={{ file }}
+   - copy: src=../files/tmp/{{inventory_hostname}}{{ file }} dest={{ file }}
 
-   - local_action: file path=tmp/{{ inventory_hostname }} state=absent
+   - local_action: file path=../files/tmp/{{ inventory_hostname }} state=absent
  
 

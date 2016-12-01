@@ -8,6 +8,13 @@ ansible/ad-hoc/01-ping  mode=0775  uid=1000  gid=1000
 ansible/ad-hoc/02-console  mode=0775  uid=1000  gid=1000
 ansible/ad-hoc/03-setup  mode=0775  uid=1000  gid=1000
 ansible/ansible.cfg  mode=0644  uid=1000  gid=1000
+ansible/files  mode=0775  uid=1000  gid=1000
+ansible/files/RPM-GPG-KEY-NGINX  mode=0664  uid=1000  gid=1000
+ansible/files/index.html.j2  mode=0664  uid=1000  gid=1000
+ansible/files/mail.j2  mode=0664  uid=1000  gid=1000
+ansible/files/nginx-default.conf.j2  mode=0644  uid=1000  gid=1000
+ansible/files/nginx.repo  mode=0664  uid=1000  gid=1000
+ansible/files/nginx.tar.gz  mode=0664  uid=1000  gid=1000
 ansible/hosts  mode=0664  uid=1000  gid=1000
 ansible/playbooks  mode=0775  uid=1000  gid=1000
 ansible/playbooks/01-hello.yml  mode=0755  uid=1000  gid=1000
@@ -19,6 +26,7 @@ ansible/playbooks/06-email.yml  mode=0755  uid=1000  gid=1000
 ansible/playbooks/07-shell.yml  mode=0775  uid=1000  gid=1000
 ansible/playbooks/08-shell-human.yml  mode=0775  uid=1000  gid=1000
 ansible/playbooks/09-script.yml  mode=0775  uid=1000  gid=1000
+ansible/playbooks/10-stateful-nginx-config.yml  mode=0775  uid=1000  gid=1000
 ansible/scripts  mode=0775  uid=1000  gid=1000
 ansible/scripts/cleanup  mode=0775  uid=1000  gid=1000
 ansible/scripts/gather_mac  mode=0775  uid=1000  gid=1000
@@ -26,7 +34,6 @@ ansible/scripts/get_ansible-examples  mode=0775  uid=1000  gid=1000
 ansible/scripts/get_human_log  mode=0775  uid=1000  gid=1000
 ansible/scripts/test_dirty_cow  mode=0664  uid=1000  gid=1000
 ansible/vars  mode=0775  uid=1000  gid=1000
-ansible/vars/mail.j2  mode=0664  uid=1000  gid=1000
 ansible/vars/users.yml  mode=0664  uid=1000  gid=1000
 if-pull-needed  mode=0775  uid=1000  gid=1000
 pull  mode=0775  uid=1000  gid=1000

@@ -1,0 +1,110 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: all
+  gather_facts: False
+
+  handlers:
+    - name: make backup
+      shell: tar -czpf /etc/nginx-$(date +%Y%m%d-%H%M).tar.gz /etc/nginx
+      listen: "Backup nginx conf"
+
+    - name: Find old nginx backups
+      find:
+        paths: "/etc"
+        patterns: "nginx*tar.gz"
+        age: "4w"
+      register: result
+      listen: "Backup nginx conf"
+    
+    - name: Delete old nginx config backups
+      file:
+        path: "{{item.path}}"
+        state: absent
+      with_items: "{{ result.files }}"
+      listen: "Backup nginx conf"
+
+    - name: Restart nginx
+      service:
+        name: nginx
+        state: restarted
+ 
+
+  tasks: 
+    - name: Copy the NGINX repository definition
+      copy: src=../files/nginx.repo dest=/etc/yum.repos.d/
+
+    - name: Create the GPG key for NGINX
+      copy: src=../files/RPM-GPG-KEY-NGINX dest=/etc/pki/rpm-gpg
+
+    - name: Install nginx
+      yum: name=nginx state=present
+
+    - name: Install rsync
+      yum: name=rsync state=present
+    
+    - name: Create initial local config
+      local_action: file state=directory path=../files/conf/{{ inventory_hostname }}/etc/
+      run_once: true
+    
+    - name: Unpack nginx example config
+      local_action: unarchive creates=../files/conf/{{ inventory_hostname }}/etc/nginx src=../files/nginx.tar.gz dest={{ playbook_dir }}/../files/conf/{{ inventory_hostname }}/etc/
+      run_once: true
+    
+    - name: Template nginx default.conf
+      local_action: template src=../files/nginx-default.conf.j2 dest=../files/conf/{{ inventory_hostname }}/etc/nginx/conf.d/default.conf force=no 
+      run_once: true
+  
+    - name: Check if nginx configuration has changed
+      synchronize:
+        src: "../files/conf/{{ inventory_hostname }}/etc/nginx/"
+        dest: /etc/nginx/
+        rsync_opts:
+          - "--no-motd"
+          - "--exclude=.git"
+          - "--rsh 'ssh -o stricthostkeychecking=no'"
+          - "--delete"
+          - "--dry-run"
+      notify: "Backup nginx conf"
+
+    - meta: flush_handlers
+       
+    - name: Copy configuration files for NginX
+      synchronize:
+        src: "../files/conf/{{ inventory_hostname }}/etc/nginx/"
+        dest: /etc/nginx/
+        rsync_opts:
+          - "--no-motd"
+          - "--exclude=.git"
+          - "--rsh 'ssh -o stricthostkeychecking=no'"
+          - "--delete"
+      notify:
+        - Restart nginx
+
+    - name: Create initial local content dir
+      local_action: file state=directory path=../files/content/
+      run_once: true
+
+    - name: Create initial local content
+      local_action: template src=../files/index.html.j2 dest=../files/content/index.html force=no
+      run_once: true
+
+    - name: Create remote content dir
+      file: path=/var/www/html state=directory
+
+    - name: Copy content 
+      synchronize:
+        src: "../files/content/"
+        dest: /var/www/html/
+        rsync_opts:
+          - "--no-motd"
+          - "--exclude=.git"
+          - "--rsh 'ssh -o stricthostkeychecking=no'"
+          - "--delete"
+    
+    - name: "Enable nginx service"
+      service:
+        name: "nginx"
+        state: "started"
+        enabled: "yes"
+    
+
