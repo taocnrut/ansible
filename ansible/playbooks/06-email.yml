@@ -1,6 +1,6 @@
 #!/usr/bin/env ansible-playbook
 ---
-- name: Add bunch of users
+- name: Send email to users
   hosts: local
   gather_facts: False
   vars_files:

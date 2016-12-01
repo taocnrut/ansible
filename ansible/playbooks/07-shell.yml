@@ -1,6 +1,9 @@
 #!/usr/bin/env ansible-playbook
 ---
-- hosts: local
+- name: Show how ugly ansible output is
+  hosts: local
+  gather_facts: False
+
   tasks:
    - shell: cat /etc/fstab
      register: result
