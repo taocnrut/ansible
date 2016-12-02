@@ -11,7 +11,7 @@
    - user: name={{ item.key }} comment={{ item.value.realname }}
      with_dict: "{{ users }}"
 
-   - authorized_key: user={{ item.key }} key={{ item.value.key }}
+   - authorized_key: user={{ item.key }} key={{ item.value.pubkey }}
      with_dict: "{{ users }}"
 
 #   - user: name={{ item.key }} state=absent remove=yes
